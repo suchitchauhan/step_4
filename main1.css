@@ -9,7 +9,7 @@
     background: black;
     z-index: 200;
     color: #fff;
-    line-height: 50vh;
+    font-size: 2vw;
     text-align: right;
 }
 
@@ -30,6 +30,11 @@
     to {
         opacity: 1;
     }
+}
+
+.h11 {
+    margin-top: 350px;
+    margin-left: auto;
 }
 
 .fade-in {
