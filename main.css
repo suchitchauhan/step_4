@@ -88,7 +88,7 @@ body {
     background-color: none;
 }
 
-#todos>.todo-input-container>.add-item:nth-child(2) {
+#todos>.todo-input-container>.add-item:nth-child(1) {
     right: 40px;
     background-color: rgba(255, 0, 0, 0.637);
 }
@@ -131,8 +131,16 @@ body {
     background-color: none;
 }
 
-#todos>.todo-list-container .todo-list .button .completed {
+#todos>.todo-list-container .todo-list input {
     background-color: none;
+}
+
+#todos>.todo-list-container .todo-list .completed {
+    background-color: none;
+    cursor: pointer;
+    background-color: red;
+    width: 15px;
+    height: 15px;
 }
 
 #todos>.todo-list-container .todo-list .button .editBtn {
@@ -147,22 +155,31 @@ body {
     pointer-events: none;
 }
 
-.line_through {
-    text-decoration: line-through;
-    opacity: 0.7;
-    transition: .3s;
-}
-
-.line_through1 {
-    text-decoration: none;
-    opacity: 1;
-    transition: .0s;
-}
-
 .fall {
     opacity: 0;
     transform: translateY(30px);
     transition: .5s;
+}
+
+.deleteAllTask {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+#deleteBtn {
+    justify-content: center;
+    display: none;
+    color: rgb(117, 45, 27);
+    size: 40px;
+}
+
+#newText {
+    text-decoration: line-through;
+    text-decoration-color: #ce1010;
+    background-color: antiquewhite;
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 600px) {
