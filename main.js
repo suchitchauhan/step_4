@@ -5,15 +5,16 @@ var deleteAllButton = document.querySelector('.deleteBtn');
 
 const count = 0;
 
+
 input.addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         // Cancel the d
         if (input.value.trim()) {
 
+
             var ultag = document.createElement('ul');
             ultag.classList.add('todo-list-container');
-
 
             //div 
             var todolist = document.createElement('div');
@@ -27,6 +28,8 @@ input.addEventListener("keyup", function(event) {
             //button
             var buttonDiv = document.createElement('div');
             buttonDiv.classList.add('button');
+
+
 
             var completeButton = document.createElement('INPUT');
             completeButton.classList.add('completed');
@@ -58,15 +61,13 @@ input.addEventListener("keyup", function(event) {
             buttonDiv.appendChild(delteButton);
 
             MainTodoContainer.appendChild(ultag);
-
+            simple_details();
 
             input.value = "";
 
             deleteBtn.style.display = "block";
-            count++;
 
-        }
-        // Trigger the button element with a click
+        } // Trigger the button element with a click
     }
 });
 
@@ -149,6 +150,21 @@ function edit_working(e) {
     }
 }
 
+function simple_details() {
+    var getting_Ultag10 = document.querySelectorAll('.todo-list-container');
+    var length_count1 = getting_Ultag10.length;
+
+    if (length_count1 == 1) {
+        detail_maker.style.display = "none";
+        wrap.style.display = "block";
+    }
+    if (length_count1 < 1) {
+        detail_maker.style.display = "block";
+        wrap.style.display = "none";
+    }
+}
+
+
 function delete_working(e) {
 
     var msg = "Delete Confirmation";
@@ -163,18 +179,15 @@ function delete_working(e) {
                 //alert(getting_Ultag1.length);
                 if (length_count == 1) {
                     deleteBtn.style.display = "none";
+                    simple_details();
                 } else {
                     deleteBtn.style.display = "block";
                 }
             }
         }
-
-
     } else {
         return false;
     }
-
-
 }
 
 
@@ -189,6 +202,7 @@ function deleteAllTask() {
                 getting_Ultag[i].remove();
             }
             deleteBtn.style.display = "none";
+            simple_details();
         }
 
     } else {
@@ -196,9 +210,6 @@ function deleteAllTask() {
     }
 
 }
-
-
-
 
 function complete_mark(e) {
     if (e.checked) {
@@ -217,3 +228,41 @@ function complete_mark(e) {
     }
 
 }
+
+var searchButton = document.getElementById("searchButton");
+search_value = document.getElementById("searchTerm");
+search_value.addEventListener("keyup", function(e) {
+
+    var getting_Ultag = document.querySelectorAll('.todo-item');
+    var getting_Ultag_ul = document.querySelectorAll('.todo-list-container');
+
+    console.log(getting_Ultag);
+    //var getting_div = getting_Ultag.innerText;
+
+    // console.log(getting_Ultag.innerText);
+
+    // console.log(JSON.stringify(getting_div));
+    // var search_box_value = search_value.value;
+    //    console.log(search_box_value);
+
+    for (let i = 0; i < getting_Ultag.length; i++) {
+        if (getting_Ultag[i].innerText.match(search_value.value)) {
+            // console.log(getting_Ultag[i]);
+            // console.log(search_value.value);
+            getting_Ultag[i].style.opacity = 1;
+
+            getting_Ultag_ul[i].style.display = "block";
+
+        } else if (search_value.value == "") {
+            getting_Ultag_ul[i].style.display = "block";
+
+            getting_Ultag[i].style.opacity = 1;
+        } else {
+
+            getting_Ultag_ul[i].style.display = "none";
+
+        }
+
+    }
+
+})

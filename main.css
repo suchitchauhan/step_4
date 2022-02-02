@@ -28,7 +28,7 @@ body {
 #todos>.heading {
     margin-bottom: 30px;
     text-align: center;
-    box-shadow: 5px 8px 15px #ce1010;
+    box-shadow: 5px 8px 15px #850505;
 }
 
 #todos>.heading>h1 {
@@ -56,6 +56,13 @@ body {
 }
 
 #todos>.todo-input-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#todos>.todo-input-container1 {
     width: 100%;
     text-align: center;
     position: relative;
@@ -166,6 +173,28 @@ body {
     justify-content: center;
     display: flex;
     cursor: pointer;
+    margin-top: 60px;
+}
+
+#detail_maker {
+    display: block;
+    height: 30vh;
+    width: 50vw;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    box-shadow: -5px 10px 20px rgb(250, 37, 37);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+.detail_maker1 {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 #deleteBtn {
@@ -186,4 +215,53 @@ body {
     #todos {
         width: 100%;
     }
+}
+
+.wrap {
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    display: none;
+    box-shadow: 5px 5px 15px rgb(64, 2, 2);
+    height: 36px;
+}
+
+search {
+    width: 100%;
+    position: absolute;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 0.5px solid #033d56;
+    border-right: none;
+    padding: 5px;
+    height: 34px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #b37d0a;
+}
+
+.searchTerm:focus {
+    color: #3b033a;
+    font-weight: bold;
+}
+
+.searchButton {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: rgb(123, 3, 3);
+    cursor: pointer;
+    font-size: 20px;
+    margin-block-end: auto;
+    background-color: none;
+    border-color: none;
+    border: none;
+    background: none;
+}
+
+#search_data {
+    margin-block-end: auto;
 }
